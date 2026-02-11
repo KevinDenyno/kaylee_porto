@@ -9,7 +9,7 @@ import { Text } from '@react-three/drei';
 import { useMemo } from "react";
 
 // replace with your own imports, see the usage snippet for details
-const cardGLB = "/portofolio/assets/card.glb";
+const cardGLB = "/assets/card.glb";
 const lanyard = "/portofolio/assets/lanyard.png";
 
 import * as THREE from 'three';
