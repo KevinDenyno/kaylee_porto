@@ -10,7 +10,7 @@ import { useMemo } from "react";
 
 // replace with your own imports, see the usage snippet for details
 const cardGLB = "/assets/card.glb";
-const lanyard = "/portofolio/assets/lanyard.png";
+const lanyard = "/assets/lanyard.png";
 
 import * as THREE from 'three';
 import './Lanyard.css';
@@ -46,13 +46,13 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
   const { nodes, materials } = useGLTF(cardGLB);
   const texture = useMemo(() => createLanyardTexture(), []);
-  const frontPhoto = useTexture('/portofolio/assets/front.png');
+  const frontPhoto = useTexture('/assets/front.png');
 
   const frontTexture = useMemo(() => {
     if (!frontPhoto.image) return frontPhoto;
     return createFrontCardTexture(frontPhoto.image);
   }, [frontPhoto]);
-  const backTexture  = useTexture('/portofolio/assets/back.png');
+  const backTexture  = useTexture('/assets/back.png');
   const nameGroup = useRef();
   const [textVisible, setTextVisible] = useState(false);
   
@@ -73,7 +73,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   frontTexture.anisotropy = 16;
 
   frontTexture.wrapS = frontTexture.wrapT = THREE.ClampToEdgeWrapping;
-  const cardTexture = useTexture('/portofolio/assets/kevin.png'); 
+  const cardTexture = useTexture('/assets/kevin.png'); 
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]));
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
